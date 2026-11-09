@@ -49,7 +49,7 @@ export function TestKit() {
         <li>
           <span>
             Get free testnet ETH for gas.
-            {onNetwork && eth.data && <em className="mono"> You have {amount(eth.data.value)} ETH</em>}
+            {onNetwork && eth.data && <em className="mono"> You have {amount(eth.data.value, 18, 6)} ETH</em>}
           </span>
           <a className={`btn btn-small${needsGas ? "" : " btn-ghost"}`} href={FAUCET_URL} target="_blank" rel="noreferrer">
             Open faucet

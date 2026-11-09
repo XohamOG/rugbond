@@ -254,6 +254,10 @@ main {
   font-size: 1.35rem;
 }
 
+.register-note {
+  margin: -8px 0 14px;
+}
+
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));

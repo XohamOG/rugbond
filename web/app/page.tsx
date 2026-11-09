@@ -45,6 +45,7 @@ export default async function Home() {
           <h2 id="register-title" className="section-title">
             The register
           </h2>
+          <p className="muted small register-note">Bonds No. 0000 to 0006 were posted by the RugBond team to test the system.</p>
           {sorted.length === 0 ? (
             <p className="muted">No bonds yet. Be the first to put a promise on record.</p>
           ) : (

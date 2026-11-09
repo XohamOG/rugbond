@@ -1,7 +1,7 @@
 import { formatUnits } from "viem";
 
-export function amount(value: bigint, decimals = 18): string {
-  return Number(formatUnits(value, decimals)).toLocaleString("en-US", { maximumFractionDigits: 2 });
+export function amount(value: bigint, decimals = 18, maximumFractionDigits = 2): string {
+  return Number(formatUnits(value, decimals)).toLocaleString("en-US", { maximumFractionDigits });
 }
 
 export function shortAddress(address: string): string {

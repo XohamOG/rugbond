@@ -1,0 +1,36 @@
+{
+  "bondId": 6,
+  "creator": "0xb87591607D5475316177B330a465c0FF5795D56f",
+  "saleHash": "0x1b19b34d83616aded9da623873a61321c2ac3ccb097f83baa6958f29c66c1574",
+  "slashHash": "0xe803f4fcc46339b54d38affbd4aa5139377e8b3ff426e7f0ef6644b8d7d158fe",
+  "detectToSentMs": 2651,
+  "detectToConfirmedMs": 3702,
+  "saleToSlashSeconds": "4",
+  "supplyBefore": "371000000000000000000000",
+  "supplyAfter": "331000000000000000000000",
+  "log": [
+    {
+      "t": "2026-11-09T11:56:54.001Z",
+      "event": "tracking",
+      "id": "6",
+      "token": "0x1bf8dF5d705D02FFc9d1e3c2756d2c09AF3B411F",
+      "wallets": 1
+    },
+    {
+      "t": "2026-11-09T11:57:01.101Z",
+      "event": "breach detected",
+      "id": "6",
+      "index": "0",
+      "saleTx": "0x1b19b34d83616aded9da623873a61321c2ac3ccb097f83baa6958f29c66c1574"
+    },
+    {
+      "t": "2026-11-09T11:57:05.067Z",
+      "event": "slashed",
+      "id": "6",
+      "hash": "0xe803f4fcc46339b54d38affbd4aa5139377e8b3ff426e7f0ef6644b8d7d158fe",
+      "detectToSentMs": 2651,
+      "detectToConfirmedMs": 3702,
+      "saleToSlashSeconds": "4"
+    }
+  ]
+}

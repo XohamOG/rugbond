@@ -127,8 +127,10 @@ export class Watcher {
 
     let hash: Hash;
     try {
-      const { request } = await rpc.public.simulateContract(call);
-      const estimate = await rpc.public.estimateContractGas(call);
+      const [{ request }, estimate] = await Promise.all([
+        rpc.public.simulateContract(call),
+        rpc.public.estimateContractGas(call),
+      ]);
       hash = await rpc.wallet.writeContract({ ...request, gas: (estimate * 13n) / 10n });
     } catch (error) {
       // Usually another watcher got there first or the seller restored the balance.

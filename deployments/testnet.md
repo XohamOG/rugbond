@@ -10,7 +10,7 @@ Chain ID 46630. All tokens are mocks with no value. Source is verified on the ex
 
 ## Transactions run by the project
 
-Every bond below was posted by the project to test the system. None came from a third party.
+Every bond below was posted by the project to test the system. None came from a third party. Bonds 4 and 5 came from an automated browser test of the website and are not listed. Bond 6 was run through the website to record the demo video.
 
 | Bond | Step | Transaction |
 |---|---|---|
@@ -25,12 +25,17 @@ Every bond below was posted by the project to test the system. None came from a 
 | 3 | Promised wallet sells | [`0x55fc2978…`](https://explorer.testnet.chain.robinhood.com/tx/0x55fc297837b5c1ffefebc382142c2b126b799e7b72e959d6d17bf163c35944e8) |
 | 3 | **Slashed automatically by the watcher** | [`0x02c5b9f6…`](https://explorer.testnet.chain.robinhood.com/tx/0x02c5b9f6948835fce709d4c6f26c182c4cc280c8422f2cdf15ce8e9b4b42fb99) |
 
+| 6 | Promised wallet sells 30,000 DEMO | [`0x1b19b34d…`](https://explorer.testnet.chain.robinhood.com/tx/0x1b19b34d83616aded9da623873a61321c2ac3ccb097f83baa6958f29c66c1574) |
+| 6 | **Slashed automatically by the watcher: 40,000 burned, 10,000 paid** | [`0xe803f4fc…`](https://explorer.testnet.chain.robinhood.com/tx/0xe803f4fcc46339b54d38affbd4aa5139377e8b3ff426e7f0ef6644b8d7d158fe) |
+
 ## Measured watcher speed
 
-From the bond 3 run on the public RPC, in a single measurement:
+Two runs on the public RPC:
 
-| Interval | Time |
-|---|---|
-| Breach detected to slash sent | 2.9 s |
-| Breach detected to slash confirmed | 3.9 s |
-| Sale block to slash block | 9 s |
+| Interval | Bond 3 | Bond 6 |
+|---|---|---|
+| Breach detected to slash sent | 2.9 s | 2.7 s |
+| Breach detected to slash confirmed | 3.9 s | 3.7 s |
+| Sale block to slash block | 9 s | 4 s |
+
+Bond 6 ran after the watcher was changed to simulate and estimate gas in parallel. The sample is too small to treat either figure as typical.
