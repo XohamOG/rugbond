@@ -6,7 +6,7 @@ A coin creator locks $wif in an ownerless contract and promises that named walle
 
 No admin decides anything. The contract reads `balanceOf` and acts on the answer.
 
-**Status:** contract and tests are done. The watcher and web app are not built yet. This deployment targets testnet with a mock WIF; see [DECISIONS.md](DECISIONS.md).
+**Status:** live on testnet with a mock WIF. Addresses and real transaction links are in [deployments/testnet.md](deployments/testnet.md), and differences from the original plan are in [DECISIONS.md](DECISIONS.md).
 
 ## Contract
 
@@ -47,6 +47,27 @@ forge script script/Deploy.s.sol --rpc-url robinhood_testnet --broadcast
 ```
 
 With `WIF_ADDRESS` unset, the script also deploys a mock WIF and a demo coin, both with an open faucet.
+
+## Running the watcher
+
+Anyone can run a watcher and earn the slash reward. It needs [pnpm](https://pnpm.io/installation) and a wallet holding a small amount of testnet ETH.
+
+```sh
+pnpm install
+# In .env: WATCHER_PRIVATE_KEY=<a throwaway key>
+pnpm watcher
+```
+
+It reacts to transfers out of promised wallets and re-checks every bond each minute in case it missed one. Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` to post slashes to a channel. `RPC_PRIMARY` and `RPC_FALLBACK` are optional, and any RPC not serving chain 46630 is skipped.
+
+## Running the website
+
+```sh
+pnpm install
+pnpm web
+```
+
+The site reads everything from the chain and keeps no database. Open http://localhost:3000, connect a browser wallet, and use the test-token buttons to get started.
 
 ## What a bond does not mean
 

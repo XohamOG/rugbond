@@ -1,0 +1,11 @@
+{
+  "name": "rugbond",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@12.18.0",
+  "scripts": {
+    "watcher": "pnpm --filter @rugbond/watcher start",
+    "web": "pnpm --filter @rugbond/web dev",
+    "test": "pnpm --filter @rugbond/watcher test"
+  }
+}

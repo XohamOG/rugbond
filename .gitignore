@@ -18,3 +18,8 @@ dist/
 *.sqlite
 *.db
 .DS_Store
+
+# Next.js
+next-env.d.ts
+*.tsbuildinfo
+.vercel/

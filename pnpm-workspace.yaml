@@ -1,0 +1,11 @@
+packages:
+  - shared
+  - watcher
+  - web
+
+allowBuilds:
+  esbuild: true
+  # Optional native speedups. The packages fall back to plain JavaScript.
+  bufferutil: false
+  keccak: false
+  utf-8-validate: false

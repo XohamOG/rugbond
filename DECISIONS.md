@@ -14,6 +14,12 @@ Where the build differs from the original spec, and why.
 | Errors | As listed | Adds `DeadlinePassed`, `AlreadyBreached` | Clearer failure reasons for the interface |
 | `_readBalance` variable | `balance` | `amount` | `balance` is a reserved word in assembly and did not compile |
 
+## Website scope
+
+Included: the home page, posting a bond from the connected wallet, bond and coin pages, slash and withdraw buttons, `/limits`, and one-click test-token buttons.
+
+Left out: USD values and the launchpad deployer check, which need mainnet data; a fund button (`fund` stays in the contract); multi-wallet signing links; the embeddable badge and JSON API; a database.
+
 ## Consequence of testnet-only
 
 The spec's requirements table lists at least one real post, slash and fund on mainnet, and says bonds are posted in the real $wif with slashes calling `WIF.burn`. A testnet deployment does not do that. The fork test does prove that `burn` works against the real $wif. Moving to mainnet later means running the same deploy script with `WIF_ADDRESS` set.
